@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PreviousGuess from './PreviousGuess';
 import './App.css';
 
 const API_KEY = `dDiB2TbsVlgYtU3itSJwjhR5dM6PUZXj`;
@@ -123,11 +124,10 @@ class App extends Component{
           src={this.state.imgUrl} 
           alt="Giphy Gif" 
         />
-        <ul>
-          {this.state.prevGuesses.map((guess, index) => {
-            return <li key={`${guess}+${index}`}>{guess}</li>
-          })}
-        </ul>
+        <PreviousGuess 
+          guesses={this.state.prevGuesses} 
+          favColor="green"
+        />
       </>
     );
   }
